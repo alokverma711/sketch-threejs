@@ -6,3 +6,6 @@ psd/*-assets/
 .sass-cache
 !src/model/**/*
 !docs/model/**/*
+
+// $env:NODE_OPTIONS="--openssl-legacy-provider"
+// npm run dev

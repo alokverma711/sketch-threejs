@@ -20,6 +20,7 @@
     "IE 11"
   ],
   "devDependencies": {
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production gulp build",
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.1",
     "babel-loader": "^8.2.2",
@@ -72,3 +73,9 @@
     "vue": "^2.6.12"
   }
 }
+
+
+
+
+
+
