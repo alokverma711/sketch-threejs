@@ -10,16 +10,28 @@ const webpackError = function() {
   this.emit('end');
 };
 
-gulp.task('scripts', () => {
+gulp.task('scripts', (done) => {
   conf.webpack.mode = process.env.NODE_ENV;
+  console.log(`Starting Webpack build in ${conf.webpack.mode} mode...`);
+
   if (conf.webpack.mode == 'development') {
     return gulp.src(conf.src)
       .pipe(webpackStream(conf.webpack, webpack))
-      .on('error', webpackError)
+      .on('error', function(err) {
+        console.error('Webpack Error (dev):', err.toString());
+        this.emit('end');
+      })
       .pipe(gulp.dest(conf.dest[conf.webpack.mode]));
   } else {
     return webpackStream(conf.webpack, webpack)
+      .on('error', function(err) {
+        console.error('Webpack Error (prod):', err.toString());
+        done(err);
+      })
       .pipe($.rename({suffix: '.min'}))
-      .pipe(gulp.dest(conf.dest[conf.webpack.mode]));
+      .pipe(gulp.dest(conf.dest[conf.webpack.mode]))
+      .on('end', () => {
+        console.log('Webpack build completed successfully.');
+      });
   }
 });
