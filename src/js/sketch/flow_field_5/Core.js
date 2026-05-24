@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
-import vs from './glsl/core.vs';
-import fs from './glsl/core.fs';
+import vs from './glsl/Core.vs';
+import fs from './glsl/Core.fs';
 
 export default class Core extends THREE.Mesh {
   constructor() {
