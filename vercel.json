@@ -1,4 +1,8 @@
 {
   "buildCommand": "npm run vercel-build",
-  "outputDirectory": "docs"
+  "outputDirectory": "docs",
+  "rewrites": [
+    { "source": "/sketch-threejs", "destination": "/" },
+    { "source": "/sketch-threejs/:path*", "destination": "/:path*" }
+  ]
 }
