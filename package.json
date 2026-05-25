@@ -11,7 +11,7 @@
     "start": "npm run dev",
     "dev": "cross-env NODE_ENV=development gulp",
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production gulp build",
-    "vercel-build": "npm run build"
+    "vercel-build": "npm run build && node scripts/vercel-output.js"
   },
   "engines": {
     "node": "20.x"

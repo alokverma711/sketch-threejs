@@ -6,6 +6,7 @@ psd/*-assets/
 .sass-cache
 !src/model/**/*
 !docs/model/**/*
+docs/sketch-threejs/
 
 // $env:NODE_OPTIONS="--openssl-legacy-provider"
 // npm run dev

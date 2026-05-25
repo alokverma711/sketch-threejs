@@ -2,7 +2,14 @@
   "buildCommand": "npm run vercel-build",
   "outputDirectory": "docs",
   "rewrites": [
-    { "source": "/sketch-threejs", "destination": "/" },
-    { "source": "/sketch-threejs/:path*", "destination": "/:path*" }
+    { "source": "/sketch-threejs/js/:path*", "destination": "/js/:path*" },
+    { "source": "/sketch-threejs/css/:path*", "destination": "/css/:path*" },
+    { "source": "/sketch-threejs/img/:path*", "destination": "/img/:path*" },
+    { "source": "/sketch-threejs/model/:path*", "destination": "/model/:path*" },
+    { "source": "/sketch-threejs/font/:path*", "destination": "/font/:path*" },
+    { "source": "/sketch-threejs/sketch/:path*", "destination": "/sketch/:path*" }
+  ],
+  "redirects": [
+    { "source": "/sketch-threejs", "destination": "/sketch-threejs/", "permanent": true }
   ]
 }
